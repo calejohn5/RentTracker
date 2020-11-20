@@ -4,12 +4,13 @@ export default class List extends LightningElement {
     error;
     records;
 
+// hook when component is inserted into DOM
+// store data in variables and let our html work with it
     connectedCallback() {
         getRoommates()
         .then(result=>{
             this.records=result;
             this.error=undefined;
-            console.log(result);
         })
         .catch(error=>{
             this.records=undefined;

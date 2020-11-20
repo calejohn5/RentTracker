@@ -2,6 +2,11 @@
 <div class='container'>
     <lightning-card>
         <div class="title">{roommate.Name}</div>
+<!-- 
+    TO NOTE. This is not the best way to access our data. 
+    I should have mapped the data instead of leaving it in a string 
+-->
+        <!-- loop through our object again to access our 2nd layer -->
         <template class='hello' for:each={roommate.Months__r} for:item="months">
             <p key= {months.Id} class="month-items">
                 {months.Name}               
@@ -9,13 +14,6 @@
                 <b>{months.Payment__c}</b> 
             </p>
        </template>
-    <!--
-        <p class="slds-p-horizontal_small">{roommate.Months__r}       
-            <lightning-icon icon-name="utility:chevronright" alternative-text="Success!" variant="success"
-            title="success variant x-small" size="x-small"></lightning-icon>        
-        </p> 
-        <p slot="footer">Card Footer</p>
-    -->
     </lightning-card>
 </div>
 </template>

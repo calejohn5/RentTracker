@@ -1,0 +1,36 @@
+<template>
+    <lightning-card title="Roommates!" icon-name="standard:catalog">
+        <div class="container">
+            <template if:true={records}>
+                <template for:each={records} for:item="roommate">
+                     <c-tile
+                    key={roommate.Id}
+                    roommate={roommate}
+                    ontileclick={handleTileClick}>
+                    </c-tile>
+                </template>
+            </template>
+            <template if:true={error}>
+                {error}
+            </template>
+            <c-month-search>
+            </c-month-search>
+        </div>
+    </lightning-card>
+</template>
+
+
+
+
+
+
+
+
+
+
+<!-- replace when tile component
+                <c-tile 
+                key={roommate.Id} 
+                product={roommate} 
+            </c-tile>
+-->

@@ -1,0 +1,21 @@
+<template>
+<div class='container'>
+    <lightning-card>
+        <div class="title">{roommate.Name}</div>
+        <template class='hello' for:each={roommate.Months__r} for:item="months">
+            <p key= {months.Id} class="month-items">
+                {months.Name}               
+                <lightning-icon class="green-background" icon-name="utility:chevronright" alternative-text="result" variant="success" title="success variant x-small" size="xx-small"></lightning-icon> 
+                <b>{months.Payment__c}</b> 
+            </p>
+       </template>
+    <!--
+        <p class="slds-p-horizontal_small">{roommate.Months__r}       
+            <lightning-icon icon-name="utility:chevronright" alternative-text="Success!" variant="success"
+            title="success variant x-small" size="x-small"></lightning-icon>        
+        </p> 
+        <p slot="footer">Card Footer</p>
+    -->
+    </lightning-card>
+</div>
+</template>
